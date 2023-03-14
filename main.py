@@ -10,15 +10,17 @@ window.title('Question Bank')
 w = window.winfo_screenwidth()
 h = window.winfo_screenheight()
 window.geometry("%dx%d" % (w, h))
+# 全屏
 # window.attributes('-fullscreen', True)
 
 
+# 设置背景图片
 background_image = Image.open('background.jpg')
 background_photo = ImageTk.PhotoImage(background_image)
-
 background_label = tk.Label(window, image=background_photo)
 background_label.place(relx=0, rely=0, relwidth=1, relheight=1)
 
+# 问题和答案显示参数
 question_label = tk.Label(
     window, text='Click "New Question" to get started!', font=('Arial', 40, 'bold'), wraplength=1300, highlightthickness=1, bd=0)
 question_label.place(relx=0.5, rely=0.15, anchor=tk.N)
@@ -48,7 +50,7 @@ def show_answer():
     answer_label.config(text=answer_text)
     question_displayed = False
 
-
+# 按钮显示
 new_question_button = tk.Button(
     window, text='New Question', font=('Arial', 20), command=get_random_question)
 # new_question_button.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
